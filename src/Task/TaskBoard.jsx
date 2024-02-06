@@ -5,6 +5,12 @@ import TaskList from "./TaskList";
 import NoTasksFound from "./NoTasksFound";
 import AddTaskModal from "./AddTaskModal";
 
+// Function to get tasks from local storage
+const getTasksFromLocalStorage = () => {
+  const storedTasks = localStorage.getItem("tasks");
+  return storedTasks ? JSON.parse(storedTasks) : [];
+};
+
 export default function TaskBoard() {
   const defaultTask = {
     id: crypto.randomUUID(),
