@@ -60,7 +60,20 @@ export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
               >
                 {task.status}
               </td>
-              <td className="text-center">{task.priority}</td>
+              <td className="text-center">
+                {" "}
+                <span
+                  className={`inline-block h-5 whitespace-nowrap rounded-[45px] px-2.5 text-sm capitalize text-[#F4F5F6] ${
+                    task.priority === "High"
+                      ? bgColor("red")
+                      : task.priority === "Medium"
+                      ? bgColor("yellow")
+                      : bgColor("green")
+                  }`}
+                >
+                  {task.priority}
+                </span>
+              </td>
               <td>
                 <div className="flex items-center justify-center space-x-3">
                   <button
