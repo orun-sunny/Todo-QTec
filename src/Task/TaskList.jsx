@@ -2,8 +2,16 @@ import { FaStar } from "react-icons/fa";
 import bgColor from "../utils/bgColor";
 
 export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
+  // const totalTasks = tasks.length;
+  // const completedTasks = tasks.filter(
+  //   (task) => task.status === "Completed"
+  // ).length;
+
   return (
     <div className="overflow-auto">
+      <div className="mb-4 text-white">
+        {/* Total Tasks: {totalTasks}, Completed Tasks: {completedTasks} */}
+      </div>
       <table className="table-fixed  xl:w-full">
         <thead>
           <tr>
