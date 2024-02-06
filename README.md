@@ -1,8 +1,64 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Title
 
-Currently, two official plugins are available:
+Todo-app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Todo-app
+This is a simple task management application that allows users to manage their tasks effectively.
+
+Requirements
+Task List Display
+Display a list of tasks with their respective status (completed or not completed).
+Each task should have options to mark as completed or delete.
+Include a counter for total tasks and completed tasks.
+Task Management
+Implement the ability to add a new task.
+Implement the ability to edit an existing task.
+Implement the ability to mark a task as completed.
+Implement the ability to delete a task.
+Technologies Used
+React
+JavaScript
+HTML
+CSS
+React Icons
+React Toastify
+
+## Acknowledgements
+
+ - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
+ - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+
+
+## 🚀 About Me
+I'm a full stack developer...
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone 
+```
+
+Go to the project directory
+
+```bash
+  cd todo-app
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+

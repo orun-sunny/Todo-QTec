@@ -6,10 +6,10 @@ import NoTasksFound from "./NoTasksFound";
 import AddTaskModal from "./AddTaskModal";
 
 // Function to get tasks from local storage
-const getTasksFromLocalStorage = () => {
-  const storedTasks = localStorage.getItem("tasks");
-  return storedTasks ? JSON.parse(storedTasks) : [];
-};
+// const getTasksFromLocalStorage = () => {
+//   const storedTasks = localStorage.getItem("tasks");
+//   return storedTasks ? JSON.parse(storedTasks) : [];
+// };
 
 export default function TaskBoard() {
   const defaultTask = {
@@ -89,6 +89,7 @@ export default function TaskBoard() {
     <section className="mb-20" id="tasks">
       {showAddModal && (
         <AddTaskModal
+          onEdit={handleEditTask}
           onSave={handleAddEditTask}
           onCloseClick={handleCloseClick}
           taskToUpdate={taskToUpdate}

@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { Zoom, toast } from "react-toastify";
 
-export default function AddTaskModal({ onSave, taskToUpdate, onCloseClick }) {
+export default function AddTaskModal({
+  onEdit,
+  onSave,
+  taskToUpdate,
+  onCloseClick,
+}) {
   const [task, setTask] = useState(
     taskToUpdate || {
       id: crypto.randomUUID(),
@@ -25,6 +31,21 @@ export default function AddTaskModal({ onSave, taskToUpdate, onCloseClick }) {
       ...task,
       [name]: value,
     });
+  };
+
+  const handleSave = () => {
+    // Check if any form field is empty
+    if (!task.title || !task.description || !task.status || !task.priority) {
+      toast.error("Form Submission Failed! Fill up forms every step", {
+        autoClose: 1500,
+
+        transition: Zoom,
+      });
+      return; // Stop execution if any field is empty
+    }
+
+    onSave(task, isAdd);
+    onCloseClick();
   };
   return (
     <>
@@ -107,7 +128,8 @@ export default function AddTaskModal({ onSave, taskToUpdate, onCloseClick }) {
           <button
             type="submit"
             className="rounded bg-blue-600 px-4 py-2 text-white transition-all hover:opacity-80"
-            onClick={() => onSave(task, isAdd)}
+            // onClick={() => onSave(task, isAdd)}
+            onClick={handleSave}
           >
             Save
           </button>
