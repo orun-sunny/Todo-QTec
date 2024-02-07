@@ -16,7 +16,7 @@ export default function TaskBoard() {
     id: crypto.randomUUID(),
     title: "Learn React Native",
     description:
-      "I want to Learn React such thanI can treat it like my slave and make it do whatever I want to do.",
+      "I want to Learn React such than I can treat it like my slave and make it do whatever I want to do.",
 
     status: "Incomplete",
     priority: "High",
@@ -29,8 +29,8 @@ export default function TaskBoard() {
     "High",
     "Medium",
     "Low",
-  ]); // Array of priority filters
-  const [currentPriorityIndex, setCurrentPriorityIndex] = useState(0); // Index of the current priority filter
+  ]);
+  // const [currentPriorityIndex, setCurrentPriorityIndex] = useState(0);
 
   function handleAddEditTask(newTask, isAdd) {
     if (isAdd) {
@@ -64,19 +64,11 @@ export default function TaskBoard() {
     setTasks([...tasks]);
   }
 
-  function filterTasksByPriority(priority) {
-    if (!priority) {
-      return tasks; // If no priority filter selected, return all tasks
-    }
-    return tasks.filter((task) => task.priority === priority); // Filter tasks based on selected priority
-  }
-
-  // Function to cycle through priority filters when the button is clicked
-  function handlePriorityFilterButtonClick() {
-    setCurrentPriorityIndex(
-      (currentPriorityIndex + 1) % priorityFilters.length
-    ); // Increment index, cycling through the array
-  }
+  // function handlePriorityFilterButtonClick() {
+  //   setCurrentPriorityIndex(
+  //     (currentPriorityIndex + 1) % priorityFilters.length
+  //   );
+  // }
 
   function handleFavorite(taskId) {
     setTasks(
@@ -125,7 +117,10 @@ export default function TaskBoard() {
             tasks={tasks}
             onAddClick={() => setShowAddModal(true)}
             onDeleteAllClick={handleDeleteAllClick}
-            onFilterChange={setPriorityFilters}
+            // onFilterChange={setPriorityFilters}
+            // onPriorityFilterClick={handlePriorityFilterButtonClick}
+            // currentPriorityIndex={currentPriorityIndex}
+            // priorityFilters={priorityFilters}
           />
           {tasks.length > 0 ? (
             <TaskList
