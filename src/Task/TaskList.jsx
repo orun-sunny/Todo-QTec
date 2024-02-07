@@ -2,9 +2,10 @@ import { FaStar } from "react-icons/fa";
 import bgColor from "../utils/bgColor";
 
 export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
-  // const handleAddLoal = id =>{
-  //   console.log();
-  // }
+  tasks.sort((a, b) => {
+    const priorityOrder = { High: 3, Medium: 2, Low: 1 };
+    return priorityOrder[b.priority] - priorityOrder[a.priority];
+  });
   return (
     <div className="overflow-auto">
       <div className="mb-4 text-white">

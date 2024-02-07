@@ -25,6 +25,12 @@ export default function TaskBoard() {
   const [tasks, setTasks] = useState([defaultTask]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState(null);
+  const [priorityFilters, setPriorityFilters] = useState([
+    "High",
+    "Medium",
+    "Low",
+  ]); // Array of priority filters
+  const [currentPriorityIndex, setCurrentPriorityIndex] = useState(0); // Index of the current priority filter
 
   function handleAddEditTask(newTask, isAdd) {
     if (isAdd) {
@@ -56,6 +62,20 @@ export default function TaskBoard() {
   function handleDeleteAllClick() {
     tasks.length = 0;
     setTasks([...tasks]);
+  }
+
+  function filterTasksByPriority(priority) {
+    if (!priority) {
+      return tasks; // If no priority filter selected, return all tasks
+    }
+    return tasks.filter((task) => task.priority === priority); // Filter tasks based on selected priority
+  }
+
+  // Function to cycle through priority filters when the button is clicked
+  function handlePriorityFilterButtonClick() {
+    setCurrentPriorityIndex(
+      (currentPriorityIndex + 1) % priorityFilters.length
+    ); // Increment index, cycling through the array
   }
 
   function handleFavorite(taskId) {
@@ -105,6 +125,7 @@ export default function TaskBoard() {
             tasks={tasks}
             onAddClick={() => setShowAddModal(true)}
             onDeleteAllClick={handleDeleteAllClick}
+            onFilterChange={setPriorityFilters}
           />
           {tasks.length > 0 ? (
             <TaskList
