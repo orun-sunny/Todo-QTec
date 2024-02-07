@@ -15,10 +15,11 @@ Implement the ability to add a new task.
 Implement the ability to edit an existing task.
 Implement the ability to mark a task as completed.
 Implement the ability to delete a task.
-Technologies Used
-React
+
+## Technologies Used
+
 JavaScript
-HTML
+#HTML
 CSS
 React Icons
 React Toastify
