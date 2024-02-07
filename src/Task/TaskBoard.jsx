@@ -25,11 +25,11 @@ export default function TaskBoard() {
   const [tasks, setTasks] = useState([defaultTask]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState(null);
-  const [priorityFilters, setPriorityFilters] = useState([
-    "High",
-    "Medium",
-    "Low",
-  ]);
+  // const [priorityFilters, setPriorityFilters] = useState([
+  //   "High",
+  //   "Medium",
+  //   "Low",
+  // ]);
   // const [currentPriorityIndex, setCurrentPriorityIndex] = useState(0);
 
   function handleAddEditTask(newTask, isAdd) {
